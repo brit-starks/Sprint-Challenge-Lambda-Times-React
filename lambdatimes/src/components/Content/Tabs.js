@@ -1,16 +1,7 @@
 import React from 'react';
-import tabData from './data.js';
 import Tab from './Tab';
 
-class Tabs extends React.Component{
-  constructor(){
-    super();
-    this.state = {
-      tab: tabData
-    };
-  }
-
-render(){
+const Tabs = props => {
   return (
     <div className="tabs">
       <div className="topics">
@@ -20,14 +11,14 @@ render(){
             {props.tabs.map(tab => {
               return(
                 <>
-                tab={this.state.tab}
+                {tab.tabs}
                 </>
               );
             })}
       </div>
     </div>
   );
-}}
+};
 
 // Make sure to use PropTypes to validate your types!
 export default Tabs;
